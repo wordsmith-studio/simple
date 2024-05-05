@@ -1,27 +1,15 @@
 ---
-import website from "../website.json";
+import config from "@config/config.json";
 import Layout from "@layouts/index.astro";
-import { SITE } from "@config";
-import { slug as slugger } from "github-slugger";
-import { getTags } from "@lib/tagsParser.astro";
+import List from "@components/List.astro";
+import { getContent } from "@lib/contentParser.astro";
+import { sortByDate } from "@lib/utils/sortFunctions";
 
-const tags = await getTags("blog");
+
+let allPosts = await getContent(config.settings.blog_folder);
+allPosts = sortByDate(allPosts);
 ---
 
-<Layout>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-xl-7">
-        <h1 class="display-4 my-5 my-lg-6 pb-lg-4 text-center">{website.name}</h1>
-        <p>{website.description}</p>
-        <ul>
-              {tags.map((tag: any) => (
-                     <a href={`/tag/${slugger(tag)}/`} class="link-tag text-dark">
-                                                            #{tag}
-                                                          </a>
-              ))}
-        </ul>
-      </div>
-    </div>
-  </div>
+<Layout title={title}>
+  <List title={title} page={{data: allPosts}} url="posts/" />
 </Layout>
