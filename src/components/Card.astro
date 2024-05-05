@@ -32,7 +32,7 @@ const { post, url } = Astro.props;
         >
       </h2>
       <p class="small">
-        <span class="text-uppercase">{dateFormat(post.data.date)}</span>
+        <span class="text-uppercase">{dateFormat(post.data.modDatetime)}</span>
       </p>
       <p class="card-text">{post.data.description}</p>
       <p>
