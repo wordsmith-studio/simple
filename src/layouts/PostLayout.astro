@@ -32,7 +32,7 @@ const { slugPrevious, slugNext } = frontmatter;
                 tags &&
                   tags.map((tag: any) => (
                     <a
-                      href={`${SITE.website}tag/${slug(tag)}/`}
+                      href={`${SITE.website}tag/${slugger(tag)}/`}
                       class="link-tag text-dark"
                     >
                       #{tag}
