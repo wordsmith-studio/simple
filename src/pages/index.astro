@@ -7,7 +7,7 @@ import { SITE } from "@config";
 
 let allPosts = await getContent("blog");
 allPosts = sortByDate(allPosts);
-title = SITE.title;
+let title = SITE.title;
 ---
 
 <Layout title={title}>
