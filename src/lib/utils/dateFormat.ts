@@ -1,4 +1,4 @@
-import { LOCALE } from "../../config.ts";
+import { LOCALE } from "@config";
 
 export const dateFormat = (datetime: string | Date) => {
   const dateTime = new Date(datetime);
