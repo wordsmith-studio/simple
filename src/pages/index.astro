@@ -13,6 +13,7 @@ const tags = await getTags("blog");
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-7">
         <h1 class="display-4 my-5 my-lg-6 pb-lg-4 text-center">{website.name}</h1>
+        <p>{website.description}</p>
         <ul>
               {tags.map((tag: any) => (
                      <a href={`/tag/${slugger(tag)}/`} class="link-tag text-dark">
