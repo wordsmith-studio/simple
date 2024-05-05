@@ -1,6 +1,10 @@
 ---
 import website from "../website.json";
 import Layout from "@layouts/index.astro";
+import { SITE } from "@config/index";
+import { slug as slugger } from "github-slugger";
+
+let tags = ["tag1", "tag2", "tag3", "tag4", "tag5"];
 ---
 
 <Layout>
@@ -8,7 +12,13 @@ import Layout from "@layouts/index.astro";
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-7">
         <h1 class="display-4 my-5 my-lg-6 pb-lg-4 text-center">{website.name}</h1>
-        <p>{website.description}</p>
+        <ul>
+              {tags.map((tag: any) => (
+                     <a href={`${SITE.website}/tag/${slugger(tag)}/`} class="link-tag text-dark">
+                                                            #{tag}
+                                                          </a>
+              ))}
+        </ul>
       </div>
     </div>
   </div>
