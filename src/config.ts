@@ -3,7 +3,7 @@ import type { Site } from "./types.ts";
 import websiteDetails from "./website.json";
 
 export const SITE: Site = {
-  website: "/",
+  website: websiteDetails.url,
   desc: websiteDetails.description,
   title: websiteDetails.name,
   ogImage: "astropaper-og.jpg",
