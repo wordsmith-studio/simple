@@ -20,6 +20,7 @@ allPosts = sortByDate(allPosts);
   </div>
   <div class="bg-skew bg-skew-light">
     <div class="container py-4">
+      <h3>Featured Posts</h3>
       <div class="row" transition:name="list" transition:animate="slide">
         {allPosts.map((post) => <Card post={post} url={''} />)}
       </div>
