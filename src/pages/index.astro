@@ -1,12 +1,11 @@
 ---
-import config from "@config/config.json";
 import Layout from "@layouts/index.astro";
 import List from "@components/List.astro";
 import { getContent } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 
-let allPosts = await getContent(config.settings.blog_folder);
+let allPosts = await getContent("blog");
 allPosts = sortByDate(allPosts);
 ---
 
