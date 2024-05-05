@@ -15,6 +15,6 @@
   ],
   "settings": {
     "pagination": 6,
-    "blog_folder": "posts"
+    "blog_folder": "blog"
   }
 }
