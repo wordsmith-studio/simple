@@ -1,7 +1,7 @@
 ---
 import { SITE } from "@config";
 import { getContent } from "@lib/contentParser.astro";
-import MarkdownPostLayout from "../../layouts/PostLayout.astro";
+import MarkdownPostLayout from "../../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getContent("blog");
