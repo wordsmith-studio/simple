@@ -3,10 +3,11 @@ import Layout from "@layouts/index.astro";
 import List from "@components/List.astro";
 import { getContent } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
-
+import { SITE } from "@config";
 
 let allPosts = await getContent("blog");
 allPosts = sortByDate(allPosts);
+title = SITE.name;
 ---
 
 <Layout title={title}>
