@@ -1,13 +1,13 @@
 ---
-import config from "@config/config.json";
+import { SITE } from "@config";
 import { getContent } from "@lib/contentParser.astro";
 import { getTags } from "@lib/tagsParser.astro";
 import { addAdjacentSlugs } from "@lib/utils/addAdjacentSlugs";
 import MarkdownPostLayout from "../../../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const allTags = await getTags(config.settings.blog_folder);
-  const allposts = await getContent(config.settings.blog_folder);
+  const allTags = await getTags("blog");
+  const allposts = await getContent("blog");
 
   const paths = allTags.flatMap((tag) => {
     const filteredPosts = allposts.filter(

@@ -1,5 +1,5 @@
 ---
-import config from "@config/config.json";
+import { SITE } from "@config";
 import { dateFormat } from "@lib/utils/dateFormat";
 import Layout from "./index.astro";
 
@@ -31,7 +31,7 @@ const { slugPrevious, slugNext } = frontmatter;
                 tags &&
                   tags.map((tag: any) => (
                     <a
-                      href={`${config.site.baseUrl}tag/${tag}/`}
+                      href={`${SITE.website}tag/${tag}/`}
                       class="link-tag text-dark"
                     >
                       #{tag}

@@ -1,28 +1,21 @@
 ---
-import config from "@config/config.json";
+import { SITE } from "@config";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <div class="container">
   <div class="row justify-content-md-between">
     <div class="col-sm-12 col-md-4 mb-4">
-      <h2 class="h5 mb-3">{config.site.title}</h2>
-      <p>{config.site.description}</p>
+      <h2 class="h5 mb-3">{SITE.title}</h2>
+      <p>{SITE.desc}</p>
     </div>
     <div class="col-4 col-md-2 mb-4">
       <h2 class="h5 mb-3">Menu</h2>
       <ul class="nav flex-column">
         <li class="mb-1">
-          <a href={config.site.baseUrl} class="text-secondary">Home</a>
+          <a href={SITE.website} class="text-secondary">Home</a>
         </li>
-        {
-          config.memus.map((menu) => (
-            <li class="mb-1">
-              <a href={menu.url} class="text-secondary">
-                {menu.name}
-              </a>
-            </li>
-          ))
-        }
       </ul>
     </div>
   </div>
@@ -33,7 +26,7 @@ import config from "@config/config.json";
     class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center"
   >
     <div class="text-muted mb-3">
-      {config.site.copyright}
+      <span>Copyright &#169; {currentYear}</span>
       <p>
         <a href="https://10mohi6.tk" class="text-reset">design</a>
         <a

@@ -1,8 +1,9 @@
-import config from '@config/config.json'
+import { LOCALE } from "@config";
+
 export const dateFormat = (datetime: string | Date) => {
   const dateTime = new Date(datetime);
 
-  const date = dateTime.toLocaleDateString(config.site.language, {
+  const date = dateTime.toLocaleDateString(LOCALE.lang, {
     year: "numeric",
     month: "long",
     day: "numeric",

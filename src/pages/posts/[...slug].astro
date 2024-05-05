@@ -1,10 +1,10 @@
 ---
-import config from "@config/config.json";
+import { SITE } from "@config";
 import { getContent } from "@lib/contentParser.astro";
 import MarkdownPostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getContent(config.settings.blog_folder);
+  const posts = await getContent("blog");
   const paths = posts.map((entry: any) => ({
     params: { slug: entry.slug },
     props: { entry },

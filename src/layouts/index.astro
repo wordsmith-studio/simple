@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import config from "@config/config.json";
+import { SITE, LOCALE } from "@config";
 import BaseHead from "@components/partials/header.astro";
 import BaseFooter from "@components/partials/footer.astro";
 
@@ -14,7 +14,7 @@ export interface Props {
 const { lang, title } = Astro.props as Props;
 ---
 
-<html lang={lang || config.site.language}>
+<html lang={lang || LOCALE.lang}>
   <head>
     <BaseHead title={title} />
     <link
