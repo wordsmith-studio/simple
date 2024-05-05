@@ -19,9 +19,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# lock
-package-lock.json
-pnpm-lock.yaml
-
+# Intellij IDEA
 .idea
 src/website.json

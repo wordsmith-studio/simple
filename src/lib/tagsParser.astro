@@ -1,5 +1,7 @@
 ---
 import { getContent } from "./contentParser.astro";
+import { slug as slugger } from "github-slugger";
+
 
 export const getTags = async (collection: string) => {
   const allPosts = await getContent(collection);
@@ -7,7 +9,7 @@ export const getTags = async (collection: string) => {
   let tags: any[] = [];
   allPosts.map((post: any) => {
     post.data.tags &&
-      post.data.tags.map((tag: any) => tags.push(tag.toLowerCase()));
+      post.data.tags.map((tag: any) => tags.push(slugger(tag.toLowerCase())));
   });
 
   const allTags = [...new Set(tags)];

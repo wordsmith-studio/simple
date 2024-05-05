@@ -8,6 +8,9 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "github-slugger": "^2.0.0"
+  },
   "devDependencies": {
     "astro": "^4.5.16"
   }
