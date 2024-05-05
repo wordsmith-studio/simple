@@ -2,6 +2,7 @@
 import { SITE } from "@config";
 import { dateFormat } from "@lib/utils/dateFormat";
 import Layout from "./index.astro";
+import { slug as slugger } from "github-slugger";
 
 const { frontmatter } = Astro.props;
 const { title, modDatetime, tags } = frontmatter.data;
@@ -31,7 +32,7 @@ const { slugPrevious, slugNext } = frontmatter;
                 tags &&
                   tags.map((tag: any) => (
                     <a
-                      href={`${SITE.website}tag/${tag}/`}
+                      href={`${SITE.website}tag/${slug(tag)}/`}
                       class="link-tag text-dark"
                     >
                       #{tag}
