@@ -1,16 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@content/*": ["./src/content/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@content/*": ["content/*"],
       "@config": ["config.ts"],
-      "@styles/*": ["./src/styles/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@styles/*": ["styles/*"],
+      "@lib/*": ["lib/*"]
     }
   }
 }
