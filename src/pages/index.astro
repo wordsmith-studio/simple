@@ -3,8 +3,9 @@ import website from "../website.json";
 import Layout from "@layouts/index.astro";
 import { SITE } from "@config";
 import { slug as slugger } from "github-slugger";
+import { getTags } from "@lib/tagsParser.astro";
 
-let tags = ["tag1", "tag2", "tag3", "tag4", "tag5"];
+const tags = await getTags("blog");
 ---
 
 <Layout>
