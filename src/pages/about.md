@@ -23,7 +23,6 @@ This theme is built upon a theme called [simple-blog](https://github.com/10mohi6
 - content
 - pagination
 - tags
-- categories
 
 ## 🧞 Commands
 

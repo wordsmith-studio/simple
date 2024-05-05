@@ -4,7 +4,7 @@ import { dateFormat } from "@lib/utils/dateFormat";
 import Layout from "./index.astro";
 
 const { frontmatter } = Astro.props;
-const { title, modDatetime, categories, tags } = frontmatter.data;
+const { title, modDatetime, tags } = frontmatter.data;
 const { slugPrevious, slugNext } = frontmatter;
 ---
 
@@ -12,17 +12,6 @@ const { slugPrevious, slugNext } = frontmatter;
   <div class="container">
     <div class="row justify-content-center text-center my-5">
       <div class="col-lg-10">
-        {
-          categories &&
-            categories.map((categorie: any) => (
-              <a
-                href={`${config.site.baseUrl}categories/${categorie}/`}
-                class="d-inline-block link-cta mb-4 text-uppercase"
-              >
-                {categorie}
-              </a>
-            ))
-        }
         <h1 class="mb-4 text-center">{title}</h1>
         <p class="small mb-5 text-center">
           <span class="text-uppercase">{dateFormat(modDatetime)}</span>
