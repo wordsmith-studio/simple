@@ -16,7 +16,7 @@ const { post, url } = Astro.props;
       <h2 class="card-title mb-4">
         <a
           class="stretched-link"
-          href={`${SITE.website}${url}${post.data.slug}`}
+          href={`/${url}${post.data.slug}`}
           >{post.data.title}</a
         >
       </h2>
