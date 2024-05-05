@@ -14,7 +14,7 @@ let tags = ["tag1", "tag2", "tag3", "tag4", "tag5"];
         <h1 class="display-4 my-5 my-lg-6 pb-lg-4 text-center">{website.name}</h1>
         <ul>
               {tags.map((tag: any) => (
-                     <a href={`${SITE.url}/tag/${slugger(tag)}/`} class="link-tag text-dark">
+                     <a href={`/tag/${slugger(tag)}/`} class="link-tag text-dark">
                                                             #{tag}
                                                           </a>
               ))}
