@@ -5,6 +5,7 @@ import List from "@components/List.astro";
 import { getContent } from "@lib/contentParser.astro";
 import { getTags } from "@lib/tagsParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
+import { slug as slugger } from "github-slugger";
 
 export async function getStaticPaths({ paginate }) {
   const allTags = await getTags("blog");
@@ -14,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
 
   return Array.from(allTags).flatMap((tag) => {
     const filteredPosts = allPosts.filter(
-      (post: any) => post.data.tags
+      (post: any) => post.data.tags && post.data.tags.map(t => slugger(t)).includes(slugger(tag))
     );
     return paginate(filteredPosts, {
       params: { tag },
