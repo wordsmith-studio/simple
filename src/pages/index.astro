@@ -7,9 +7,22 @@ import { SITE } from "@config";
 
 let allPosts = await getContent("blog");
 allPosts = sortByDate(allPosts);
-let title = SITE.title;
 ---
 
-<Layout title={title}>
-  <List title={title} page={{data: allPosts}} url="posts/" />
+<Layout title={SITE.title}>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+        <h1 class="display-4 my-5 my-lg-6 pb-lg-4 text-center">{title}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="bg-skew bg-skew-light">
+    <div class="container py-4">
+      <div class="row" transition:name="list" transition:animate="slide">
+        {allPosts.map((post) => <Card post={post} url={url} />)}
+      </div>
+    </div>
+  </div>
+
 </Layout>
