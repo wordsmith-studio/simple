@@ -10,4 +10,9 @@ export default defineConfig({
         react(),
         sitemap(),
     ],
+    vite: {
+        optimizeDeps: {
+            exclude: ["@resvg/resvg-js"],
+        },
+    },
 });
