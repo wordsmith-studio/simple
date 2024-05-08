@@ -6,4 +6,6 @@ export type Site = {
   lightAndDarkMode: boolean;
   postPerPage: number;
   scheduledPostMargin: number;
+  domain: string;
+  analyticsEnabled?: boolean;
 };
