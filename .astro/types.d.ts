@@ -128,7 +128,7 @@ declare module 'astro:content' {
 		"blog": {
 "sample.md": {
 	id: "sample.md";
-  slug: "sample";
+  slug: "adding-new-posts-in-astropaper-theme";
   body: string;
   collection: "blog";
   data: any
