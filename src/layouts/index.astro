@@ -11,6 +11,7 @@ export interface Props {
   title: string;
 }
 
+const fontFamily = SITE.font;
 const { lang, title } = Astro.props as Props;
 ---
 
@@ -26,7 +27,7 @@ const { lang, title } = Astro.props as Props;
     <ViewTransitions />
   </head>
 
-  <body>
+  <body style={{ fontFamily: `${fontFamily}, monoscape` }}>
     <main id="main">
       <slot />
     </main>
