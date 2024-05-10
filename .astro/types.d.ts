@@ -125,26 +125,12 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"posts": {
-"markdown-syntax-guide.md": {
-	id: "markdown-syntax-guide.md";
-  slug: "markdown-syntax-guide";
+		"blog": {
+"sample.md": {
+	id: "sample.md";
+  slug: "sample";
   body: string;
-  collection: "posts";
-  data: any
-} & { render(): Render[".md"] };
-"placeholder-text.md": {
-	id: "placeholder-text.md";
-  slug: "placeholder-text";
-  body: string;
-  collection: "posts";
-  data: any
-} & { render(): Render[".md"] };
-"rich-content.md": {
-	id: "rich-content.md";
-  slug: "rich-content";
-  body: string;
-  collection: "posts";
+  collection: "blog";
   data: any
 } & { render(): Render[".md"] };
 };
