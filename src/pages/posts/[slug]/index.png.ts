@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   );
 
   return posts.map(post => ({
-    params: { slug: slugger(post.data.title) },
+    params: { slug: post.slug },
     props: post,
   }));
 }
