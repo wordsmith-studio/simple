@@ -7,6 +7,7 @@ export const SITE: Site = {
     domain: websiteDetails.url,
     analyticsEnabled: websiteDetails.analyticsEnabled,
     font: websiteDetails.font || "Montserrat",
+    cf: websiteDetails.cf,
     desc: websiteDetails.description,
     title: websiteDetails.name,
     lightAndDarkMode: true,

@@ -57,7 +57,7 @@ const socialImageURL = new URL(
       analyticsEnabled && (
         <script
           defer
-          data-domain={SITE.domain}
+          data-domain={SITE.cf.name}
           src="https://plausible.io/js/script.js"
         />
       )
