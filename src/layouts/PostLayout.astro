@@ -6,7 +6,6 @@ import { slug as slugger } from "github-slugger";
 
 const { frontmatter } = Astro.props;
 const { title, modDatetime, tags } = frontmatter.data;
-const { slugPrevious, slugNext } = frontmatter;
 ---
 
 <Layout title={title}>

@@ -1,5 +1,8 @@
 ---
 import { SITE } from "@config";
+import { getContent } from "@lib/contentParser.astro";
+
+const pages = (await getContent("pages")) || [];
 
 const currentYear = new Date().getFullYear();
 ---
@@ -13,12 +16,19 @@ const currentYear = new Date().getFullYear();
     <div class="col-4 col-md-2 mb-4">
       <h2 class="h5 mb-3">Menu</h2>
       <ul class="nav flex-column">
-        <li class="mb-1">
+        <li>
           <a href={'/'} class="text-secondary">Home</a>
         </li>
         <li>
            <a href={'/posts/'} class="text-secondary">Archives</a>
         </li>
+        {
+            pages.map((page) => (
+                <li>
+                <a href={'/' + page.slug} class="text-secondary">{page.data.title}</a>
+                </li>
+            ))
+        }
       </ul>
     </div>
   </div>
