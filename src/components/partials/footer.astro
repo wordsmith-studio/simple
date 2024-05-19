@@ -3,8 +3,6 @@ import { SITE } from "@config";
 import { getContent } from "@lib/contentParser.astro";
 
 const pages = (await getContent("pages")) || [];
-
-const currentYear = new Date().getFullYear();
 ---
 
 <div class="container">
@@ -38,8 +36,6 @@ const currentYear = new Date().getFullYear();
   <div
     class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center"
   >
-    <div class="text-muted mb-3">
-      <span>Copyright &#169; {currentYear}</span>
-    </div>
+    <div class="text-muted mb-3" set:html={SITE.footer || `Powered by <a href="https://wordsmith.studio">Wordsmith Studio</a>`} />
   </div>
 </div>

@@ -5,6 +5,7 @@ export type Site = {
   font: string;
   ogImage?: string;
   cf: any;
+  footer?: string;
   lightAndDarkMode: boolean;
   postPerPage: number;
   scheduledPostMargin: number;
